@@ -16,10 +16,10 @@ $ npm install --save is-relative-url
 var isRelativeUrl = require('is-relative-url');
 
 isRelativeUrl('foo/bar');
-//=> false
+//=> true
 
 isRelativeUrl('http://sindresorhus.com/foo/bar');
-//=> true
+//=> false
 ```
 
 
