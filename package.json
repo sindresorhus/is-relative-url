@@ -27,7 +27,7 @@
     "check"
   ],
   "dependencies": {
-    "is-absolute-url": "^0.1.0"
+    "is-absolute-url": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "*"
