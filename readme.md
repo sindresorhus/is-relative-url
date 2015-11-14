@@ -5,7 +5,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save is-relative-url
 ```
 
@@ -13,13 +13,16 @@ $ npm install --save is-relative-url
 ## Usage
 
 ```js
-var isRelativeUrl = require('is-relative-url');
+const isRelativeUrl = require('is-relative-url');
 
 isRelativeUrl('foo/bar');
 //=> true
 
 isRelativeUrl('http://sindresorhus.com/foo/bar');
 //=> false
+
+isRelativeUrl('//sindresorhus.com');
+//=> true
 ```
 
 
