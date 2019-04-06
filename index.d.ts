@@ -1,7 +1,7 @@
 /**
 Check if an URL is relative.
 
-@param url - The URL to inspect.
+@param url - The URL to check.
 
 @example
 ```
