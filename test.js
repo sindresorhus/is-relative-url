@@ -1,12 +1,12 @@
 import test from 'ava';
-import m from './';
+import isRelativeUrl from '.';
 
-test(t => {
-	t.false(m('http://sindresorhus.com'));
-	t.false(m('https://sindresorhus.com'));
-	t.false(m('file://sindresorhus.com'));
-	t.true(m('//sindresorhus.com'));
-	t.true(m('/foo/bar'));
-	t.true(m('foo/bar'));
-	t.true(m('foo'));
+test('main', t => {
+	t.false(isRelativeUrl('http://sindresorhus.com'));
+	t.false(isRelativeUrl('https://sindresorhus.com'));
+	t.false(isRelativeUrl('file://sindresorhus.com'));
+	t.true(isRelativeUrl('//sindresorhus.com'));
+	t.true(isRelativeUrl('/foo/bar'));
+	t.true(isRelativeUrl('foo/bar'));
+	t.true(isRelativeUrl('foo'));
 });

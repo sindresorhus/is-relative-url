@@ -1,6 +1,6 @@
 'use strict';
-var isAbsoluteUrl = require('is-absolute-url');
+const isAbsoluteUrl = require('is-absolute-url');
 
-module.exports = function (url) {
+module.exports = url => {
 	return !isAbsoluteUrl(url);
 };
