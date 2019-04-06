@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save is-relative-url
+$ npm install is-relative-url
 ```
 
 
