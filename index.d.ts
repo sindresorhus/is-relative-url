@@ -1,5 +1,5 @@
 /**
-Check if an URL is relative.
+Check if a URL is relative.
 
 @param url - The URL to check.
 
