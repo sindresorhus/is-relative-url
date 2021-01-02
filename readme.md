@@ -1,4 +1,4 @@
-# is-relative-url [![Build Status](https://travis-ci.org/sindresorhus/is-relative-url.svg?branch=master)](https://travis-ci.org/sindresorhus/is-relative-url)
+# is-relative-url
 
 > Check if a URL is relative
 
