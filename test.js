@@ -1,5 +1,5 @@
 import test from 'ava';
-import isRelativeUrl from '.';
+import isRelativeUrl from './index.js';
 
 test('main', t => {
 	t.false(isRelativeUrl('http://sindresorhus.com'));

@@ -5,7 +5,7 @@ Check if a URL is relative.
 
 @example
 ```
-import isRelativeUrl = require('is-relative-url');
+import isRelativeUrl from 'is-relative-url';
 
 isRelativeUrl('foo/bar');
 //=> true
@@ -17,6 +17,4 @@ isRelativeUrl('//sindresorhus.com');
 //=> true
 ```
 */
-declare function isRelativeUrl(url: string): boolean;
-
-export = isRelativeUrl;
+export default function isRelativeUrl(url: string): boolean;

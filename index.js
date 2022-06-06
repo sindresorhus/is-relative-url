@@ -1,4 +1,5 @@
-'use strict';
-const isAbsoluteUrl = require('is-absolute-url');
+import isAbsoluteUrl from 'is-absolute-url';
 
-module.exports = url => !isAbsoluteUrl(url);
+export default function isRelativeUrl(url) {
+	return !isAbsoluteUrl(url);
+}
