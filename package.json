@@ -1,6 +1,6 @@
 {
 	"name": "is-relative-url",
-	"version": "4.0.0",
+	"version": "4.1.0",
 	"description": "Check if a URL is relative",
 	"license": "MIT",
 	"repository": "sindresorhus/is-relative-url",
