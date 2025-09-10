@@ -21,9 +21,6 @@ isRelativeUrl('https://sindresorhus.com/foo/bar');
 
 isRelativeUrl('//sindresorhus.com');
 //=> true
-
-isRelativeUrl('//sindresorhus.com', {allowProtocolRelative: false});
-//=> false
 ```
 
 ## API

@@ -4,7 +4,7 @@ export interface Options {
 
 	When set to `false`, protocol-relative URLs are treated as absolute, which can be useful for security purposes when you want to ensure a URL won't redirect to an external domain.
 
-	**Note:** Protocol-relative URLs are [technically relative](https://datatracker.ietf.org/doc/html/rfc3986#section-4.2) according to [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986), as they require the current page's protocol to resolve into absolute URLs. However, they can still navigate to external domains, which may be a security concern in certain contexts (e.g., preventing open redirects).
+	__Note:__ Protocol-relative URLs are [technically relative](https://datatracker.ietf.org/doc/html/rfc3986#section-4.2) according to [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986), as they require the current page's protocol to resolve into absolute URLs. However, they can still navigate to external domains, which may be a security concern in certain contexts (e.g., preventing open redirects).
 
 	@default true
 
@@ -28,7 +28,6 @@ export interface Options {
 Check if a URL is relative.
 
 @param url - The URL to check.
-@param options - Configuration options.
 
 @example
 ```
@@ -42,9 +41,6 @@ isRelativeUrl('https://sindresorhus.com/foo/bar');
 
 isRelativeUrl('//sindresorhus.com');
 //=> true
-
-isRelativeUrl('//sindresorhus.com', {allowProtocolRelative: false});
-//=> false
 ```
 */
 export default function isRelativeUrl(url: string, options?: Options): boolean;
