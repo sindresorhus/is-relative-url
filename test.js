@@ -45,3 +45,19 @@ test('with allowProtocolRelative option', t => {
 	t.false(isRelativeUrl('data:text/plain,Hello', {allowProtocolRelative: false}));
 	t.false(isRelativeUrl('data:text/plain,Hello', {allowProtocolRelative: true}));
 });
+
+test('backslashes are protocol-relative too', t => {
+	// Browsers normalize `\` to `/` in the authority position, so these navigate
+	// to another origin just like `//example.com` does.
+	t.false(isRelativeUrl('\\\\example.com', {allowProtocolRelative: false}));
+	t.false(isRelativeUrl('/\\example.com', {allowProtocolRelative: false}));
+	t.false(isRelativeUrl('\\/example.com', {allowProtocolRelative: false}));
+	t.false(isRelativeUrl('\\\\example.com/path', {allowProtocolRelative: false}));
+
+	// Still allowed when protocol-relative URLs are permitted (the default).
+	t.true(isRelativeUrl('\\\\example.com'));
+	t.true(isRelativeUrl('\\\\example.com', {allowProtocolRelative: true}));
+
+	// A single leading backslash is a path, not an authority.
+	t.true(isRelativeUrl('\\foo\\bar', {allowProtocolRelative: false}));
+});
