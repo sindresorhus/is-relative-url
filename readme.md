@@ -44,7 +44,9 @@ Default: `true`
 
 Allow [protocol-relative URLs](https://en.wikipedia.org/wiki/URL#Protocol-relative_URLs) (e.g., `//example.com`) to be considered relative.
 
-Setting this to `false` will treat protocol-relative URLs as absolute, which can be useful for security purposes when you want to ensure a URL won't redirect to an external domain.
+Setting this to `false` will treat protocol-relative URLs as absolute.
+
+This rejects only URLs beginning with two slash or backslash separators (`//`, `\\`, `/\`, `\/`). It is not a general open-redirect safeguard: browsers preprocess URLs before resolving them, so other inputs can still resolve to another origin. To validate a redirect target, parse the candidate against a fixed trusted HTTP(S) base, reject parse failures, check that the origin and protocol match, and redirect using the parsed value without further decoding or rewriting.
 
 > [!NOTE]
 > Protocol-relative URLs are [technically relative](https://datatracker.ietf.org/doc/html/rfc3986#section-4.2) according to [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986), as they require the current page's protocol to resolve into absolute URLs. However, they can still navigate to external domains, which may be a security concern in certain contexts (e.g., preventing open redirects).
